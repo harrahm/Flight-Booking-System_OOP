@@ -28,7 +28,19 @@ class Flight():#class
 
     def getFlightDetails(self): 
         print(f'Flight number:{self.flightNumber} \nDeparting from: {self.departurePort} at {self.departureTime}\nArriving to: {self.arrivalPort} at {self.arrivalTime}\nNumber of Available Seats: {self.availableSeats}')
+        
 
-
-    def getPrice(self):
+    def getPrice(self, seatClass): #Returns the price based on the seat class (economy, business, first).
+        if seatClass == 'First':
+            self.price += 30
+        
+        elif seatClass == 'Business':
+            self.price += 20
+        
+        elif seatClass == 'Economy':
+            self.price += 15
+        
+        else:
+            print('Invalid seat class')
+        
         print(f'£{self.price}')
